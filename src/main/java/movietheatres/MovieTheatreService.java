@@ -4,14 +4,11 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.time.LocalTime;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.*;
 
 public class MovieTheatreService {
 
-    private Map<String, List<Movie>> moviesPerTheater = new TreeMap<>();
+    private Map<String, List<Movie>> moviesPerTheater = new TreeMap<>(String::compareToIgnoreCase);
 
     public void readFromFile(Path path) {
 
