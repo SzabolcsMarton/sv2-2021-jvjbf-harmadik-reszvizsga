@@ -43,4 +43,7 @@ public class MovieTheatreService {
     }
 
 
+    public List<String> findMovie(String title) {
+        return moviesPerTheater.entrySet().stream().filter((e)-> e.getValue().stream().anyMatch(m -> m.getTitle().equals(title))).map(e -> e.getKey()).toList();
+    }
 }
